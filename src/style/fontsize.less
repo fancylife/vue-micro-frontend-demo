@@ -1,0 +1,29 @@
+.fontsize(@size) {
+    .px2rem(font-size;@size);
+    // font-size: @size ;
+    // [data-dpr="2"] & {
+    //     font-size: @size * 2;
+    // }
+    // [data-dpr="3"] & {
+    //     font-size: @size * 3;
+    // }
+}
+
+.lineheight(@size) {
+
+  line-height: @size;
+
+    [data-dpr="2"] & {
+         line-height:@size * 2;
+    }
+    [data-dpr="3"] & {
+         line-height :@size * 3;
+    }
+}
+
+
+.text-overflow(){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

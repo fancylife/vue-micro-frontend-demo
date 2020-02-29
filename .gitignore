@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+dist
+dev
+src/components/table/dev/*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/e2e/reports
+selenium-debug.log
+package-lock.json
+fe-i18n-helper/*
+.vscode/*
+src/components/table/node_modules/*

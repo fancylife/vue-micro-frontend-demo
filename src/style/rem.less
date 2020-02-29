@@ -1,0 +1,39 @@
+@rem: 37.5; // 1rem代表的实际px，rem基准px，按375px宽的设计稿10等分
+
+.px2rem(@attr; @px) when (ispixel(@px)) {
+  @{attr}: unit(@px / @rem, rem);
+}
+
+// 处理非px值
+.px2rem(@attr; @px) when (default()) {
+  @{attr}: @px;
+}
+
+.px2rem(@attr; @px1; @px2) when (ispixel(@px1)) and (ispixel(@px2)) {
+  @{attr}: unit(@px1 / @rem, rem) unit(@px2 / @rem, rem);
+}
+
+// @px2参数非px值
+.px2rem(@attr; @px1; @px2) when (ispixel(@px1)) and not (ispixel(@px2)) {
+  @{attr}: unit(@px1 / @rem, rem) @px2;
+}
+
+// @px1参数非px值
+.px2rem(@attr; @px1; @px2) when not (ispixel(@px1)) and (ispixel(@px2)) {
+  @{attr}: @px1 unit(@px2 / @rem, rem);
+}
+
+// 处理非px值
+.px2rem(@attr; @px1; @px2) when (default()) {
+  @{attr}: @px1 @px2;
+}
+
+
+.elemAdaptDpr(){
+	[data-dpr="2"] & {
+			transform: scale(2);
+ }
+ [data-dpr="3"] & {
+			transform: scale(3);
+ } 
+}
